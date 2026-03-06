@@ -5461,3 +5461,32 @@ textarea:focus {
   border: 1px solid #b9cbe5 !important;
   color: #163f69 !important;
 }
+
+/* Remove special emphasis effects from key expressions (RO/EN index) */
+.home-main .home-tracks .program-card,
+.home-main .home-tracks .program-card:hover {
+  transform: none !important;
+}
+
+.home-main .home-tracks .program-card h3,
+.home-main .home-positioning .section-title,
+.home-main .home-positioning .journey-metric strong,
+.home-main .home-positioning .journey-stage h3,
+.home-main .home-instructor .section-title,
+.home-main .home-instructor .team-fact strong {
+  color: #1a3557 !important;
+  text-shadow: none !important;
+  background: none !important;
+}
+
+.home-main .home-tracks .program-card .label,
+.home-main .home-positioning .kicker,
+.home-main .home-instructor .kicker {
+  color: #2d4f78 !important;
+  background: #edf3fb !important;
+  border-color: #c9d7ea !important;
+}
+
+.home-main .home-positioning .journey-step {
+  background: #1f4f86 !important;
+}
