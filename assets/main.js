@@ -276,7 +276,8 @@ if (badgeContainer) {
         const track = badge.track || "N/A";
         const issuer = badge.issuer || i18n.badgeGrid.defaultIssuer;
         const date = badge.date || "N/A";
-        const status = badge.status || "N/A";
+        const rawStatus = String(badge.status || "").trim();
+        const status = /official/i.test(rawStatus) ? "" : rawStatus;
         const marketingCopy = badge.marketing_copy || i18n.badgeGrid.defaultMarketing;
         const careerOutcome = badge.career_outcome || i18n.badgeGrid.defaultOutcome;
         const ctaLabel = badge.cta_label || i18n.badgeGrid.defaultCta;
@@ -298,7 +299,7 @@ if (badgeContainer) {
               <p class="small-note"><strong>${i18n.badgeGrid.careerImpact}:</strong> ${careerOutcome}</p>
             </div>
             <div class="btn-row badge-cta-row" style="margin-top:0;">
-              <span class="status-tag">${status}</span>
+              ${status ? `<span class="status-tag">${status}</span>` : ""}
               <a class="btn primary" href="${ctaUrl}">${ctaLabel}</a>
             </div>
           </article>
