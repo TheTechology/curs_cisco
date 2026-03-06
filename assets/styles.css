@@ -4160,3 +4160,32 @@ textarea:focus {
   html[lang="en"] .course-table td:nth-child(4)::before { content: "Badge"; }
   html[lang="en"] .course-table td:nth-child(5)::before { content: "Notes"; }
 }
+
+/* Global dark unification (RO/EN): all pages keep the same deep tone. */
+body {
+  background: #050f22;
+}
+
+.home-main::before,
+.home-main::after,
+main > section + section::before {
+  display: none;
+}
+
+.hero,
+main.container .hero,
+.home-quicknav,
+.card,
+.program-card,
+.impact-media-card,
+.badge-card--marketing,
+.catalog-visual-card,
+.course-visual-card,
+.cta-panel,
+.accordion,
+.table-wrap,
+.notice {
+  background: #050f22;
+  border-color: rgba(92, 122, 173, 0.26);
+  box-shadow: none;
+}
