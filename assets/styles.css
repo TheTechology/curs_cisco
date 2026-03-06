@@ -876,6 +876,127 @@ main > section + section {
   }
 }
 
+/* Team page redesign (RO/EN): executive profile layout */
+.team-showcase .section-title {
+  margin-bottom: 0.85rem;
+}
+
+.team-executive {
+  display: grid;
+  grid-template-columns: minmax(250px, 320px) 1fr;
+  gap: 1rem;
+  align-items: start;
+  border-radius: 20px !important;
+  padding: 1rem !important;
+}
+
+.team-executive-media {
+  display: grid;
+  gap: 0.58rem;
+}
+
+.team-executive-media img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #c8d8ee;
+}
+
+.team-executive-media-note {
+  border: 1px solid #cad9ec;
+  background: #f5f9ff;
+  border-radius: 12px;
+  padding: 0.65rem 0.72rem;
+  display: grid;
+  gap: 0.12rem;
+}
+
+.team-executive-media-note strong {
+  color: #183e69;
+  font-size: 1.02rem;
+}
+
+.team-executive-media-note span {
+  color: #4b6383;
+  font-size: 0.9rem;
+}
+
+.team-executive-content {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.team-executive-head h3 {
+  margin: 0 0 0.35rem;
+  color: #14365f;
+  font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+  line-height: 1.2;
+}
+
+.team-executive-head p {
+  margin: 0;
+  color: #3f587a;
+}
+
+.team-executive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.team-panel {
+  border: 1px solid #cad9ec;
+  background: #f8fbff;
+  border-radius: 14px;
+  padding: 0.68rem 0.72rem;
+  display: grid;
+  gap: 0.18rem;
+}
+
+.team-panel strong {
+  color: #1a4e86;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.team-panel span {
+  color: #1f3452;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.team-executive-stack {
+  border: 1px solid #cad9ec;
+  background: #eef5ff;
+  border-radius: 14px;
+  padding: 0.75rem 0.78rem;
+}
+
+.team-executive-stack strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #1a4e86;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.team-executive-stack p {
+  margin: 0;
+  color: #284667;
+}
+
+@media (max-width: 1000px) {
+  .team-executive {
+    grid-template-columns: 1fr;
+  }
+
+  .team-executive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Homepage career journey professional redesign (RO/EN) */
 .home-positioning-panel {
   border: 1px solid var(--line);
