@@ -5128,24 +5128,24 @@ textarea:focus {
 /* Desktop logo scale-up for better PC fit */
 @media (min-width: 1201px) and (max-width: 1365px) {
   .site-header .header-inner {
-    min-height: 90px !important;
+    min-height: 118px !important;
   }
 
   .site-header .logo-marks img.logo-marian {
-    height: 72px !important;
-    max-width: 240px !important;
-    transform: translateY(-8px) !important;
+    height: 106px !important;
+    max-width: 350px !important;
+    transform: translateY(-10px) !important;
   }
 }
 
 @media (min-width: 1366px) {
   .site-header .header-inner {
-    min-height: 96px !important;
+    min-height: 132px !important;
   }
 
   .site-header .logo-marks img.logo-marian {
-    height: 82px !important;
-    max-width: 280px !important;
-    transform: translateY(-9px) !important;
+    height: 120px !important;
+    max-width: 420px !important;
+    transform: translateY(-12px) !important;
   }
 }
