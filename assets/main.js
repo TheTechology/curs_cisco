@@ -283,6 +283,9 @@ if (badgeContainer) {
         const ctaLabel = badge.cta_label || i18n.badgeGrid.defaultCta;
         const ctaUrl = badge.cta_url || "inregistrare.html";
 
+        const instructorLabel = isEnglishPage ? "About Instructor" : "Despre Instructor";
+        const instructorUrl = teamPage;
+
         return `
           <article class="badge-card badge-card--marketing is-visible">
             <div class="badge-media">
@@ -300,6 +303,7 @@ if (badgeContainer) {
             </div>
             <div class="btn-row badge-cta-row" style="margin-top:0;">
               ${status ? `<span class="status-tag">${status}</span>` : ""}
+              <a class="btn ghost" href="${instructorUrl}">${instructorLabel}</a>
               <a class="btn primary" href="${ctaUrl}">${ctaLabel}</a>
             </div>
           </article>

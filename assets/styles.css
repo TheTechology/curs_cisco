@@ -5722,3 +5722,20 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
     width: 100% !important;
   }
 }
+
+/* Badge cards (RO/EN): dual CTA with instructor button */
+.home-badges .badge-cta-row .btn {
+  flex: 1 1 0;
+  min-width: 140px;
+}
+
+@media (max-width: 900px) {
+  .home-badges .badge-cta-row {
+    gap: 0.45rem !important;
+  }
+
+  .home-badges .badge-cta-row .btn {
+    width: 100% !important;
+    min-width: 0;
+  }
+}
