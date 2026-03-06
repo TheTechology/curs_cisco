@@ -4603,3 +4603,95 @@ textarea:focus {
     background: #f7fbff !important;
   }
 }
+
+/* Professional button color system */
+:root {
+  --btn-primary-start: #0b5cab;
+  --btn-primary-end: #084a8c;
+  --btn-primary-hover-start: #0a5298;
+  --btn-primary-hover-end: #073f78;
+  --btn-primary-border: #06386d;
+  --btn-primary-shadow: rgba(6, 56, 109, 0.28);
+
+  --btn-secondary-bg: #f3f6fb;
+  --btn-secondary-border: #c2d0e5;
+  --btn-secondary-text: #1e3a5f;
+  --btn-secondary-hover-bg: #e7eef8;
+  --btn-secondary-hover-border: #adc1dc;
+
+  --btn-muted-bg: #e9eff8;
+  --btn-muted-border: #bfcee3;
+  --btn-muted-text: #24456d;
+}
+
+.btn,
+.nav a.nav-cta,
+.lang-switch__btn,
+.footer-trust-btn,
+.footer-seo-nav a {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn.primary,
+.nav a.nav-cta {
+  background: linear-gradient(180deg, var(--btn-primary-start), var(--btn-primary-end)) !important;
+  border-color: var(--btn-primary-border) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 20px var(--btn-primary-shadow) !important;
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible,
+.nav a.nav-cta:hover,
+.nav a.nav-cta:focus-visible {
+  background: linear-gradient(180deg, var(--btn-primary-hover-start), var(--btn-primary-hover-end)) !important;
+  border-color: #052f5c !important;
+  box-shadow: 0 12px 22px rgba(5, 47, 92, 0.32) !important;
+}
+
+.btn.ghost {
+  background: var(--btn-secondary-bg) !important;
+  border: 1px solid var(--btn-secondary-border) !important;
+  color: var(--btn-secondary-text) !important;
+}
+
+.btn.ghost:hover,
+.btn.ghost:focus-visible {
+  background: var(--btn-secondary-hover-bg) !important;
+  border-color: var(--btn-secondary-hover-border) !important;
+  color: #173553 !important;
+}
+
+.lang-switch__btn {
+  background: var(--btn-secondary-bg) !important;
+  border-color: var(--btn-secondary-border) !important;
+  color: var(--btn-secondary-text) !important;
+  font-weight: 700;
+}
+
+.lang-switch__btn:hover,
+.lang-switch__btn:focus-visible {
+  background: var(--btn-secondary-hover-bg) !important;
+  border-color: var(--btn-secondary-hover-border) !important;
+}
+
+.lang-switch__btn.is-active {
+  background: linear-gradient(180deg, var(--btn-primary-start), var(--btn-primary-end)) !important;
+  border-color: var(--btn-primary-border) !important;
+  color: #fff !important;
+}
+
+.footer-trust-btn,
+.footer-seo-nav a {
+  background: rgba(233, 239, 248, 0.1) !important;
+  border-color: rgba(190, 208, 236, 0.56) !important;
+  color: #f3f7ff !important;
+}
+
+.footer-trust-btn:hover,
+.footer-trust-btn:focus-visible,
+.footer-seo-nav a:hover,
+.footer-seo-nav a:focus-visible {
+  background: rgba(233, 239, 248, 0.2) !important;
+  border-color: rgba(210, 224, 244, 0.78) !important;
+}
