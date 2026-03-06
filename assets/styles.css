@@ -5723,6 +5723,21 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
   }
 }
 
+/* FAQ visibility fix on index RO/EN */
+.home-faq .accordion > summary {
+  color: #173d67 !important;
+  font-weight: 800 !important;
+}
+
+.home-faq .accordion > summary::after {
+  color: #0f5fb3 !important;
+  font-weight: 900 !important;
+}
+
+.home-faq .accordion .accordion-body p {
+  color: #3f5677 !important;
+}
+
 /* Badge cards (RO/EN): dual CTA with instructor button */
 .home-badges .badge-cta-row .btn {
   flex: 1 1 0;
