@@ -997,6 +997,188 @@ main > section + section {
   }
 }
 
+/* Team page redesign v2 (RO/EN): editorial layout */
+.team-feature-v2 {
+  margin-top: 0.8rem;
+}
+
+.team-feature-v2-shell {
+  border: 1px solid #bfd2ea;
+  border-radius: 28px;
+  background: linear-gradient(150deg, #ffffff 0%, #eef4fd 48%, #e4eefb 100%);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 1rem;
+  box-shadow: 0 18px 35px rgba(11, 35, 70, 0.08);
+}
+
+.team-feature-v2-media {
+  border-radius: 22px;
+  background: linear-gradient(180deg, #123764 0%, #0f2f57 100%);
+  padding: 0.85rem;
+  color: #dbe9ff;
+  display: grid;
+  gap: 0.62rem;
+  align-content: start;
+}
+
+.team-feature-v2-media img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.team-feature-v2-chip {
+  display: inline-flex;
+  width: max-content;
+  padding: 0.24rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(109, 180, 255, 0.2);
+  border: 1px solid rgba(169, 212, 255, 0.55);
+  color: #cfe6ff;
+  font-size: 0.77rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 800;
+}
+
+.team-feature-v2-media h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.06;
+}
+
+.team-feature-v2-media p {
+  margin: 0;
+  color: #bdd9fb;
+  font-size: 0.95rem;
+}
+
+.team-feature-v2-content {
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d0dff2;
+  padding: 0.92rem;
+  display: grid;
+  gap: 0.74rem;
+}
+
+.team-feature-v2-kicker {
+  display: inline-flex;
+  width: max-content;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #1f5e99;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #a9c6ea;
+  padding-bottom: 0.16rem;
+}
+
+.team-feature-v2-content h3 {
+  margin: 0;
+  color: #122e53;
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  line-height: 1.15;
+}
+
+.team-feature-v2-content > p {
+  margin: 0;
+  color: #355275;
+  font-size: 1rem;
+}
+
+.team-feature-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.56rem;
+}
+
+.team-feature-v2-grid article {
+  border: 1px solid #cbdaee;
+  border-radius: 14px;
+  background: #f7fbff;
+  padding: 0.58rem 0.66rem;
+  display: grid;
+  gap: 0.14rem;
+}
+
+.team-feature-v2-grid span {
+  color: #2c649e;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.team-feature-v2-grid strong {
+  color: #173a63;
+  font-size: 1rem;
+}
+
+.team-feature-v2-flow {
+  margin: 0;
+  padding: 0.2rem 0 0 1.1rem;
+  display: grid;
+  gap: 0.4rem;
+  color: #2e4e73;
+}
+
+.team-feature-v2-flow strong {
+  color: #184f88;
+}
+
+.team-feature-v2-stack {
+  border: 1px dashed #9fbce0;
+  border-radius: 14px;
+  background: #edf5ff;
+  padding: 0.62rem 0.7rem;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.team-feature-v2-stack strong {
+  color: #1b4d84;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.team-feature-v2-stack span {
+  color: #2c4a6b;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 980px) {
+  .team-feature-v2-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .team-feature-v2-shell {
+    border-radius: 22px;
+    padding: 0.72rem;
+    gap: 0.72rem;
+  }
+
+  .team-feature-v2-media,
+  .team-feature-v2-content {
+    border-radius: 16px;
+    padding: 0.7rem;
+  }
+
+  .team-feature-v2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-feature-v2-content h3 {
+    font-size: 1.26rem;
+  }
+}
+
 /* Homepage career journey professional redesign (RO/EN) */
 .home-positioning-panel {
   border: 1px solid var(--line);
