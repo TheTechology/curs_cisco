@@ -5,6 +5,7 @@ const DEFAULT_OWNER_EMAIL = "thetechologyhub@gmail.com";
 const DEFAULT_FROM_EMAIL = "onboarding@resend.dev";
 const DEFAULT_FROM_NAME = "NetAcad Adjud";
 const DEFAULT_TEST_RECIPIENT = "thetechologyhub@gmail.com";
+const RESEND_TEST_FROM_EMAIL = "onboarding@resend.dev";
 
 const MAX_BODY_LENGTH = 25_000;
 const MAX_NAME_LENGTH = 120;
@@ -200,6 +201,11 @@ const sendEmail = async (apiKey, message) => {
   }
 };
 
+const isUnverifiedDomainError = (error) => {
+  const message = String(error && error.message ? error.message : "").toLowerCase();
+  return message.includes("domain is not verified");
+};
+
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return jsonResponse(405, { error: "Method Not Allowed" });
@@ -248,7 +254,18 @@ exports.handler = async (event) => {
   const normalizedFromEmail = String(fromEmail || "").trim().toLowerCase();
   const isResendTestSender = normalizedFromEmail.endsWith("@resend.dev");
   const effectiveOwnerEmail = isResendTestSender ? testRecipient : ownerEmail;
-  const from = `${fromName} <${fromEmail}>`;
+  let activeFromEmail = fromEmail;
+
+  const sendInternalWithActiveSender = async () => {
+    await sendEmail(apiKey, {
+      from: `${fromName} <${activeFromEmail}>`,
+      to: [effectiveOwnerEmail],
+      reply_to: lead.email,
+      subject: internal.subject,
+      html: internal.html,
+      text: internal.text
+    });
+  };
 
   if (!apiKey) {
     return jsonResponse(500, { error: "Email service is not configured" });
@@ -315,21 +332,24 @@ exports.handler = async (event) => {
   const internal = buildInternalEmail(lead);
   const applicant = buildApplicantEmail(lead);
   const applicantEmail = lead.email.toLowerCase();
-  const shouldSendApplicantEmail = !isResendTestSender || applicantEmail === testRecipient;
 
   try {
-    await sendEmail(apiKey, {
-      from,
-      to: [effectiveOwnerEmail],
-      reply_to: lead.email,
-      subject: internal.subject,
-      html: internal.html,
-      text: internal.text
-    });
+    try {
+      await sendInternalWithActiveSender();
+    } catch (error) {
+      if (!isUnverifiedDomainError(error) || activeFromEmail.toLowerCase() === RESEND_TEST_FROM_EMAIL) {
+        throw error;
+      }
+      // Fallback for unverified sender domains: keep flow alive using Resend test sender.
+      activeFromEmail = RESEND_TEST_FROM_EMAIL;
+      await sendInternalWithActiveSender();
+    }
 
+    const activeIsTestSender = activeFromEmail.toLowerCase().endsWith("@resend.dev");
+    const shouldSendApplicantEmail = !activeIsTestSender || applicantEmail === testRecipient;
     if (shouldSendApplicantEmail) {
       await sendEmail(apiKey, {
-        from,
+        from: `${fromName} <${activeFromEmail}>`,
         to: [lead.email],
         reply_to: ownerEmail,
         subject: applicant.subject,
@@ -340,7 +360,8 @@ exports.handler = async (event) => {
 
     return jsonResponse(200, {
       ok: true,
-      applicant_email_sent: shouldSendApplicantEmail
+      applicant_email_sent: shouldSendApplicantEmail,
+      sender_used: activeFromEmail
     });
   } catch (error) {
     console.error("Enrollment email dispatch failed", {
