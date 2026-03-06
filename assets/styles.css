@@ -5106,3 +5106,14 @@ textarea:focus {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 }
+
+/* Header logo Marian positioning */
+.site-header .logo-marks img.logo-marian {
+  transform: translateY(-4px);
+}
+
+@media (min-width: 901px) {
+  .site-header .logo-marks img.logo-marian {
+    transform: translateY(-7px);
+  }
+}

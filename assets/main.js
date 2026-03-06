@@ -1,6 +1,13 @@
 const menuBtn = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 const headerInner = document.querySelector(".header-inner");
+
+const setupHeaderLogoMarian = () => {
+  const headerLogoImg = document.querySelector(".site-header .logo-marks img");
+  if (!headerLogoImg) return;
+  headerLogoImg.setAttribute("src", "Imagini/Logo_marian.png");
+  headerLogoImg.classList.add("logo-marian");
+};
 const normalizeHtmlPageName = (pageName) => {
   const trimmed = String(pageName || "").trim();
   if (!trimmed || trimmed === "/") return "index.html";
@@ -121,6 +128,7 @@ if (headerInner && !headerInner.querySelector("[data-header-contact-meta]")) {
   }
 }
 setupLanguageSwitcher();
+setupHeaderLogoMarian();
 
 if (menuBtn && nav) {
   const navDropdowns = nav.querySelectorAll(".nav-dropdown");
