@@ -4398,3 +4398,208 @@ textarea:focus {
     border-radius: 14px;
   }
 }
+
+/* Final global lock: consistent Microsoft-style academy UI on all RO/EN pages. */
+:root {
+  --font-ui: "Segoe UI", "Aptos", "Manrope", sans-serif;
+  --bg: #eef3fb;
+  --surface: #ffffff;
+  --surface-soft: #f7faff;
+  --text: #182338;
+  --muted: #4c5f7f;
+  --brand: #0078d4;
+  --brand-2: #005da6;
+  --line: #d6e0ef;
+  --ink: #0f1f35;
+  --shadow: 0 12px 28px rgba(8, 34, 73, 0.09);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body,
+body.page-home {
+  color: var(--text) !important;
+  background:
+    radial-gradient(90rem 36rem at 8% -12%, rgba(0, 120, 212, 0.16), rgba(0, 120, 212, 0)),
+    radial-gradient(72rem 32rem at 96% -8%, rgba(34, 98, 214, 0.12), rgba(34, 98, 214, 0)),
+    linear-gradient(180deg, #eff4fc 0%, #f7f9fd 100%) !important;
+}
+
+body.page-home .topbar {
+  display: block !important;
+}
+
+.home-main::before,
+.home-main::after,
+main > section + section::before,
+body.page-home .home-main::before,
+body.page-home .home-main::after {
+  display: none !important;
+}
+
+.topbar,
+.site-header,
+.nav,
+.submenu,
+.submenu-group,
+.hero,
+main.container .hero,
+.card,
+.hero-card,
+.meta-item,
+.program-card,
+.process-step,
+.trust-strip,
+.cta-panel,
+.accordion,
+.table-wrap,
+.notice,
+.badge-card,
+.course-badge-card,
+.impact-media-card,
+.catalog-visual-card,
+.course-visual-card,
+.badge-card--marketing,
+.academy-brand-strip,
+.course-career-panel,
+.course-visual-strip {
+  background: var(--surface) !important;
+  border-color: var(--line) !important;
+  box-shadow: var(--shadow);
+}
+
+.topbar {
+  color: #2a4d78 !important;
+  border-bottom-width: 1px;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid #d9e3f3 !important;
+  backdrop-filter: blur(10px);
+}
+
+.logo-marks {
+  background: #fff !important;
+  border: 1px solid #d8e4f5 !important;
+  box-shadow: 0 10px 24px rgba(9, 43, 92, 0.1);
+}
+
+.nav a,
+.nav-dropdown summary {
+  color: #1e4672 !important;
+}
+
+.nav a.active,
+.nav a:hover,
+.nav-dropdown:hover summary,
+.nav-dropdown[open] summary {
+  color: #0d3e71 !important;
+  background: #eaf2ff !important;
+}
+
+.nav a.nav-cta,
+.btn.primary {
+  color: #fff !important;
+  background: linear-gradient(180deg, #0078d4, #0063b1) !important;
+  border: 1px solid #005aa2 !important;
+  box-shadow: 0 10px 20px rgba(0, 99, 177, 0.24) !important;
+}
+
+.btn.ghost {
+  background: #fff !important;
+  border: 1px solid #c8d8ee !important;
+  color: #1e456f !important;
+}
+
+.hero h1,
+h1,
+h2,
+h3,
+.section-title,
+.module-head h2 {
+  color: #11223a !important;
+}
+
+.hero p,
+p,
+li,
+label,
+.small-note,
+.card p,
+.program-card p {
+  color: var(--muted) !important;
+}
+
+.kicker,
+.chip,
+.status-tag,
+.program-card .label {
+  color: #0d4f96 !important;
+}
+
+input,
+select,
+textarea {
+  background: #fff !important;
+  color: #112944 !important;
+  border: 1px solid #c9d8ee !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0078d4 !important;
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.18) !important;
+  outline: none;
+}
+
+.table th {
+  background: #edf4ff !important;
+  color: #173c67 !important;
+}
+
+.table td {
+  background: #fff !important;
+  color: #2f435f !important;
+}
+
+.footer {
+  margin-top: 1.5rem;
+  color: #dbe8ff !important;
+  background:
+    radial-gradient(40rem 20rem at 10% 0%, rgba(71, 129, 235, 0.24), rgba(71, 129, 235, 0)),
+    linear-gradient(180deg, #071a37 0%, #0b2a55 100%) !important;
+  border-top: 1px solid rgba(162, 189, 236, 0.28) !important;
+}
+
+.footer p,
+.footer .container,
+.footer-meta,
+.footer-copy,
+.footer-policy-nav {
+  color: #cfe0ff !important;
+}
+
+.footer a {
+  color: #f1f6ff !important;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    background: rgba(255, 255, 255, 0.96) !important;
+  }
+
+  .nav {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 1px solid #d4e1f3 !important;
+    box-shadow: 0 20px 36px rgba(12, 38, 78, 0.15) !important;
+  }
+
+  .submenu {
+    background: #f7fbff !important;
+  }
+}
