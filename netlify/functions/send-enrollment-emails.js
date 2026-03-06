@@ -1,9 +1,10 @@
 "use strict";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
-const DEFAULT_OWNER_EMAIL = "marian.dumitru@grupulverde.ro";
+const DEFAULT_OWNER_EMAIL = "thetechologyhub@gmail.com";
 const DEFAULT_FROM_EMAIL = "admitere@academie.grupulverde.ro";
 const DEFAULT_FROM_NAME = "NetAcad Adjud";
+const DEFAULT_TEST_RECIPIENT = "thetechologyhub@gmail.com";
 
 const MAX_BODY_LENGTH = 25_000;
 const MAX_NAME_LENGTH = 120;
@@ -133,7 +134,7 @@ const buildApplicantEmail = (lead) => {
   const html = `
     <p>Bună, ${escapeHtml(lead.nume || "viitor cursant")},</p>
     <p>Îți confirmăm primirea solicitării de înscriere pentru <strong>${escapeHtml(course)}</strong>.</p>
-    <p>În maximum <strong>24-48h</strong> vei fi contactat de echipa academică pentru pașii următori.</p>
+    <p>În maximum <strong>24 de ore</strong> vei fi contactat de echipa academică pentru pașii următori.</p>
     <p>În răspunsul nostru vei primi informațiile complete despre:</p>
     <ul>
       <li>accesul în platforma de curs și activarea contului;</li>
@@ -156,7 +157,7 @@ const buildApplicantEmail = (lead) => {
   const text =
     `Bună, ${lead.nume || "viitor cursant"},\n\n` +
     `Îți confirmăm primirea solicitării de înscriere pentru ${course}.\n` +
-    `În maximum 24-48h vei fi contactat de echipa academică pentru pașii următori.\n\n` +
+    `În maximum 24 de ore vei fi contactat de echipa academică pentru pașii următori.\n\n` +
     `Vei primi informațiile complete despre:\n` +
     `- accesul în platformă;\n` +
     `- costuri și opțiuni de plată;\n` +
@@ -229,6 +230,7 @@ exports.handler = async (event) => {
   const ownerEmail = process.env.ENROLLMENT_OWNER_EMAIL || DEFAULT_OWNER_EMAIL;
   const fromEmail = process.env.ENROLLMENT_FROM_EMAIL || DEFAULT_FROM_EMAIL;
   const fromName = process.env.ENROLLMENT_FROM_NAME || DEFAULT_FROM_NAME;
+  const testRecipient = (process.env.RESEND_TEST_RECIPIENT || DEFAULT_TEST_RECIPIENT).toLowerCase();
   const from = `${fromName} <${fromEmail}>`;
 
   if (!apiKey) {
@@ -295,28 +297,35 @@ exports.handler = async (event) => {
 
   const internal = buildInternalEmail(lead);
   const applicant = buildApplicantEmail(lead);
+  const isResendTestSender = fromEmail.toLowerCase().endsWith("@resend.dev");
+  const applicantEmail = lead.email.toLowerCase();
+  const shouldSendApplicantEmail = !isResendTestSender || applicantEmail === testRecipient;
 
   try {
-    await Promise.all([
-      sendEmail(apiKey, {
-        from,
-        to: [ownerEmail],
-        reply_to: lead.email,
-        subject: internal.subject,
-        html: internal.html,
-        text: internal.text
-      }),
-      sendEmail(apiKey, {
+    await sendEmail(apiKey, {
+      from,
+      to: [ownerEmail],
+      reply_to: lead.email,
+      subject: internal.subject,
+      html: internal.html,
+      text: internal.text
+    });
+
+    if (shouldSendApplicantEmail) {
+      await sendEmail(apiKey, {
         from,
         to: [lead.email],
         reply_to: ownerEmail,
         subject: applicant.subject,
         html: applicant.html,
         text: applicant.text
-      })
-    ]);
+      });
+    }
 
-    return jsonResponse(200, { ok: true });
+    return jsonResponse(200, {
+      ok: true,
+      applicant_email_sent: shouldSendApplicantEmail
+    });
   } catch (error) {
     console.error("Enrollment email dispatch failed", {
       message: String(error && error.message ? error.message : error),
