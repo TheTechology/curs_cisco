@@ -5433,3 +5433,31 @@ textarea:focus {
     transform: translateY(0) !important;
   }
 }
+
+/* Absolute visibility override for homepage learning paths (RO/EN) */
+.home-main .home-tracks .home-tracks-grid .program-card {
+  background: #ffffff !important;
+  border: 2px solid #c7d8ef !important;
+  box-shadow: 0 16px 34px rgba(13, 44, 88, 0.14) !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card .label {
+  background: #e9f2ff !important;
+  border: 1px solid #bcd2f0 !important;
+  color: #154a83 !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card h3 {
+  color: #0f335c !important;
+  text-shadow: none !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card p {
+  color: #344d6f !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card .btn.ghost {
+  background: #eef4fd !important;
+  border: 1px solid #b9cbe5 !important;
+  color: #163f69 !important;
+}
