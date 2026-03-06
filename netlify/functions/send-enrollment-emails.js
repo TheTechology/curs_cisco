@@ -347,20 +347,30 @@ exports.handler = async (event) => {
 
     const activeIsTestSender = activeFromEmail.toLowerCase().endsWith("@resend.dev");
     const shouldSendApplicantEmail = !activeIsTestSender || applicantEmail === testRecipient;
+    let applicantEmailSent = false;
     if (shouldSendApplicantEmail) {
-      await sendEmail(apiKey, {
-        from: `${fromName} <${activeFromEmail}>`,
-        to: [lead.email],
-        reply_to: ownerEmail,
-        subject: applicant.subject,
-        html: applicant.html,
-        text: applicant.text
-      });
+      try {
+        await sendEmail(apiKey, {
+          from: `${fromName} <${activeFromEmail}>`,
+          to: [lead.email],
+          reply_to: ownerEmail,
+          subject: applicant.subject,
+          html: applicant.html,
+          text: applicant.text
+        });
+        applicantEmailSent = true;
+      } catch (error) {
+        console.error("Applicant confirmation email failed", {
+          message: String(error && error.message ? error.message : error),
+          applicantEmail: lead.email,
+          sender: activeFromEmail
+        });
+      }
     }
 
     return jsonResponse(200, {
       ok: true,
-      applicant_email_sent: shouldSendApplicantEmail,
+      applicant_email_sent: applicantEmailSent,
       sender_used: activeFromEmail
     });
   } catch (error) {
