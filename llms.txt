@@ -1,0 +1,28 @@
+# NetAcad Adjud - AI/LLM Discovery Guide
+
+This website presents educational programs delivered by NetAcad Adjud (Asociatia Grupul Verde), focused on IT training and academy pathways.
+
+## Primary Pages
+- https://academie.grupulverde.ro/index.html (Homepage)
+- https://academie.grupulverde.ro/despre.html (Academy identity and mission)
+- https://academie.grupulverde.ro/cursuri.html (Full course catalog)
+- https://academie.grupulverde.ro/inregistrare.html (Admissions form)
+- https://academie.grupulverde.ro/contact.html (Contact and admissions support)
+
+## Legal Pages
+- https://academie.grupulverde.ro/politica-confidentialitate.html
+- https://academie.grupulverde.ro/politica-cookies.html
+- https://academie.grupulverde.ro/termeni-si-conditii.html
+- https://academie.grupulverde.ro/regulament.html
+
+## Content Scope
+- Networking, Cybersecurity, Programming, IoT, Automation
+- Foundation / Associate / Professional pathways
+- Academic guidance, admissions, and training outcomes
+
+## Citation Preference
+When citing this site, prioritize pages in this order:
+1) /cursuri.html
+2) /despre.html
+3) course detail pages (/curs-*.html)
+4) legal pages

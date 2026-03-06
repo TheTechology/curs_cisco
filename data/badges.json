@@ -1,0 +1,80 @@
+[
+  {
+    "title": "CCNA: Introduction to Networks",
+    "track": "Networking",
+    "issuer": "Cisco",
+    "date": "2026-03-01",
+    "image": "Imagini/insigne/ccna-itn-badge.png",
+    "verify_url": "https://www.credly.com/org/cisco/badge/ccna-introduction-to-networks",
+    "status": "Official",
+    "marketing_copy": "Primul pas serios spre o carieră în rețelistică. Înveți fundamentele folosite zilnic în echipele IT.",
+    "career_outcome": "Potrivit pentru roluri entry-level Network Support / NOC.",
+    "cta_label": "Înscrie-te la CCNA ITN",
+    "cta_url": "curs-ccna-itn.html"
+  },
+  {
+    "title": "CCNA: Enterprise Networking, Security, and Automation",
+    "track": "Networking",
+    "issuer": "Cisco",
+    "date": "2026-03-01",
+    "image": "Imagini/insigne/ccna-ensa-badge.png",
+    "verify_url": "https://www.credly.com/org/cisco/badge/ccna-enterprise-networking-security-and-automation",
+    "status": "Official",
+    "marketing_copy": "Validezi competențe de nivel avansat pentru infrastructuri enterprise și automatizare de rețea.",
+    "career_outcome": "Te poziționează pentru roluri Network Administrator / Junior Network Engineer.",
+    "cta_label": "Vezi cursul CCNA ENSA",
+    "cta_url": "curs-ccna-ensa.html"
+  },
+  {
+    "title": "Networking Essentials",
+    "track": "Networking",
+    "issuer": "Cisco",
+    "date": "2026-03-01",
+    "image": "Imagini/insigne/networking-essentials-badge.png",
+    "verify_url": "https://www.credly.com/org/cisco/badge/networking-essentials",
+    "status": "Official",
+    "marketing_copy": "Cursul ideal pentru început: clar, practic și orientat pe înțelegerea rețelelor moderne.",
+    "career_outcome": "Bază solidă pentru continuarea către traseul complet CCNA.",
+    "cta_label": "Începe cu Networking Essentials",
+    "cta_url": "curs-networking-essentials.html"
+  },
+  {
+    "title": "Cybersecurity Essentials",
+    "track": "Cybersecurity",
+    "issuer": "Cisco",
+    "date": "2026-03-01",
+    "image": "Imagini/insigne/cybersecurity-essentials-badge.png",
+    "verify_url": "https://www.credly.com/org/cisco/badge/cybersecurity-essentials",
+    "status": "Official",
+    "marketing_copy": "Înveți practic cum să protejezi infrastructuri IT și să răspunzi la incidente de securitate.",
+    "career_outcome": "Recomandat pentru început în SOC / Security Operations.",
+    "cta_label": "Înscrie-te la Cybersecurity",
+    "cta_url": "curs-cybersecurity-essentials.html"
+  },
+  {
+    "title": "Network Security",
+    "track": "Cybersecurity",
+    "issuer": "Cisco",
+    "date": "2026-03-01",
+    "image": "Imagini/insigne/network-security-badge.png",
+    "verify_url": "https://www.credly.com/org/cisco/badge/network-security",
+    "status": "Official",
+    "marketing_copy": "Aprofundezi securizarea rețelelor enterprise prin scenarii reale și practici actuale.",
+    "career_outcome": "Te ajută să evoluezi către roluri Security Administrator / Network Security.",
+    "cta_label": "Vezi cursul Network Security",
+    "cta_url": "curs-network-security.html"
+  },
+  {
+    "title": "Python Essentials 2",
+    "track": "Programming",
+    "issuer": "Cisco",
+    "date": "2026-03-01",
+    "image": "Imagini/insigne/python-essentials-2-badge.png",
+    "verify_url": "https://www.credly.com/org/cisco/badge/python-essentials-2",
+    "status": "Official",
+    "marketing_copy": "Construiești abilități reale de programare Python folosite în automatizare și proiecte tehnice.",
+    "career_outcome": "Potrivit pentru Junior Python Developer / Automation Specialist.",
+    "cta_label": "Începe traseul Python",
+    "cta_url": "curs-python-essentials-2.html"
+  }
+]

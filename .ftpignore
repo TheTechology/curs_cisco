@@ -1,0 +1,21 @@
+# Do not upload internal/project files to public hosting
+.DS_Store
+.git/
+.github/
+.vscode/
+node_modules/
+netlify/
+*.md
+*.log
+*.map
+*.bak
+*.tmp
+*.sql
+*.sqlite
+*.db
+.env
+.env.*
+composer.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

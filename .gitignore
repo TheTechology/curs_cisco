@@ -1,0 +1,4 @@
+.DS_Store
+.home/
+netlify-debug.log
+node_modules/

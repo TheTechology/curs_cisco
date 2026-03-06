@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="t d">
+  <title id="t">Cisco Badge Placeholder</title>
+  <desc id="d">Placeholder for certification badge image.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b5ea8"/>
+      <stop offset="100%" stop-color="#2e7d32"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="30" fill="#eef6fb"/>
+  <circle cx="200" cy="145" r="78" fill="url(#g)"/>
+  <text x="200" y="162" text-anchor="middle" font-size="44" font-family="Arial, sans-serif" fill="#fff" font-weight="700">CERT</text>
+  <text x="200" y="252" text-anchor="middle" font-size="30" font-family="Arial, sans-serif" fill="#0f2f4a" font-weight="700">Badge Image</text>
+  <text x="200" y="286" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#4a667f">Add official Cisco badge</text>
+</svg>
