@@ -807,6 +807,75 @@ main > section + section {
   border: 1px solid var(--line);
 }
 
+.team-profile {
+  align-items: start;
+}
+
+.team-profile-content {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.team-profile-content h3 {
+  margin: 0;
+}
+
+.team-profile-content > p {
+  margin: 0;
+}
+
+.team-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.team-fact {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  padding: 0.65rem 0.75rem;
+  display: grid;
+  gap: 0.22rem;
+}
+
+.team-fact strong {
+  font-size: 0.8rem;
+  color: #1f4a78;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.team-fact span {
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.team-stack {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f3f8ff;
+  padding: 0.75rem 0.85rem;
+}
+
+.team-stack strong {
+  display: block;
+  margin-bottom: 0.22rem;
+  color: #194b80;
+}
+
+.team-stack p {
+  margin: 0;
+  color: #345175;
+}
+
+@media (max-width: 900px) {
+  .team-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
 .notice {
   background: #f2f7ff;
   border: 1px solid #d2e0f8;
