@@ -6552,3 +6552,313 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
     width: 100% !important;
   }
 }
+
+/* About page v2 (RO/EN): premium academy layout */
+.about-main-v2 {
+  display: grid;
+  gap: 1.05rem;
+}
+
+.about-hero-v2 {
+  border-radius: 20px !important;
+  padding: 1rem !important;
+}
+
+.about-hero-v2-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.about-hero-v2-copy .kicker {
+  color: #0f5ba7 !important;
+  letter-spacing: 0.08em !important;
+  font-size: 0.86rem !important;
+}
+
+.about-hero-v2-copy .section-title {
+  margin: 0.2rem 0 0.58rem !important;
+  font-size: clamp(1.75rem, 3vw, 2.85rem) !important;
+  line-height: 1.05 !important;
+  color: #122f52 !important;
+}
+
+.about-hero-v2-copy p {
+  margin: 0 !important;
+  color: #3c587d !important;
+  max-width: 62ch !important;
+}
+
+.about-hero-v2-actions {
+  margin-top: 0.86rem !important;
+  gap: 0.5rem !important;
+}
+
+.about-hero-v2-actions .btn {
+  min-height: 48px !important;
+  border-radius: 12px !important;
+}
+
+.about-hero-v2-panel {
+  border: 1px solid #c6d7ec;
+  background: linear-gradient(180deg, #f7fbff, #edf5ff);
+  border-radius: 16px;
+  padding: 0.75rem;
+}
+
+.about-hero-v2-panel h3 {
+  margin: 0 0 0.45rem;
+  color: #183d69 !important;
+}
+
+.about-hero-v2-panel ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.about-hero-v2-panel li {
+  color: #2f527a !important;
+}
+
+.about-metrics-v2 {
+  margin-top: 0.82rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.58rem;
+}
+
+.about-metrics-v2 article {
+  border: 1px solid #c5d7ee;
+  border-radius: 12px;
+  background: #f8fbff;
+  padding: 0.58rem 0.64rem;
+}
+
+.about-metrics-v2 span {
+  display: block;
+  color: #2d649d !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.about-metrics-v2 strong {
+  display: block;
+  color: #1a3f6b !important;
+  margin-top: 0.16rem;
+}
+
+.about-identity-v2 {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.95fr) minmax(0, 1.05fr);
+  gap: 0.9rem;
+  align-items: center;
+  border-radius: 18px !important;
+  padding: 0.9rem !important;
+}
+
+.about-identity-v2-media img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #c3d4ea;
+}
+
+.about-identity-v2-copy .kicker {
+  color: #145eaf !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+.about-identity-v2-copy .section-title {
+  margin: 0.22rem 0 0.44rem !important;
+}
+
+.about-identity-v2-copy p {
+  margin: 0 !important;
+  color: #3b577b !important;
+}
+
+.about-pillars-v2 .section-title {
+  margin-bottom: 0.62rem !important;
+}
+
+.about-pillars-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.66rem;
+}
+
+.about-pillars-v2-grid .card {
+  border-radius: 14px !important;
+  padding: 0.76rem !important;
+}
+
+.about-pillars-v2-grid h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+  color: #173c67 !important;
+}
+
+.about-pillars-v2-grid p {
+  margin: 0;
+  color: #3e597b !important;
+}
+
+.about-framework-v2 {
+  border-radius: 18px !important;
+  padding: 0.9rem !important;
+}
+
+.about-framework-v2-head {
+  margin-bottom: 0.58rem;
+}
+
+.about-framework-v2-head .kicker {
+  color: #1a61ad !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+.about-framework-v2-head .section-title {
+  margin: 0.2rem 0 0 !important;
+}
+
+.about-framework-v2-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.about-framework-v2-steps article {
+  border: 1px solid #c6d8ed;
+  border-radius: 14px;
+  background: #f8fbff;
+  padding: 0.62rem;
+  display: grid;
+  gap: 0.26rem;
+}
+
+.about-framework-v2-steps span {
+  width: 1.95rem;
+  height: 1.95rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(180deg, #0d66bf, #0b549f);
+}
+
+.about-framework-v2-steps h3 {
+  margin: 0;
+  color: #183d69 !important;
+  font-size: 1rem;
+}
+
+.about-framework-v2-steps p {
+  margin: 0;
+  color: #3c587c !important;
+  font-size: 0.93rem;
+}
+
+.about-impact-v2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.66rem;
+}
+
+.about-impact-v2 .card {
+  border-radius: 14px !important;
+  padding: 0.78rem !important;
+}
+
+.about-impact-v2 h3 {
+  margin: 0 0 0.36rem;
+  color: #173c68 !important;
+}
+
+.about-impact-v2 p {
+  margin: 0;
+  color: #3d587d !important;
+}
+
+.about-cta-v2 {
+  border-radius: 16px !important;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.9rem !important;
+}
+
+.about-cta-v2 .section-title {
+  margin-bottom: 0.36rem !important;
+}
+
+.about-cta-v2 p {
+  margin: 0 !important;
+  color: #3c587b !important;
+}
+
+.about-cta-v2 .btn-row {
+  gap: 0.48rem;
+  margin: 0;
+}
+
+.about-cta-v2 .btn {
+  min-height: 46px !important;
+  border-radius: 12px !important;
+}
+
+@media (max-width: 1100px) {
+  .about-pillars-v2-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-framework-v2-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .about-hero-v2-grid,
+  .about-identity-v2,
+  .about-impact-v2,
+  .about-cta-v2 {
+    grid-template-columns: 1fr;
+  }
+
+  .about-metrics-v2,
+  .about-pillars-v2-grid,
+  .about-framework-v2-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-v2,
+  .about-identity-v2,
+  .about-framework-v2,
+  .about-cta-v2 {
+    padding: 0.74rem !important;
+  }
+
+  .about-hero-v2-copy .section-title {
+    font-size: clamp(1.44rem, 7.2vw, 2rem) !important;
+  }
+
+  .about-hero-v2-actions,
+  .about-cta-v2 .btn-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-hero-v2-actions .btn,
+  .about-cta-v2 .btn {
+    width: 100% !important;
+  }
+}
