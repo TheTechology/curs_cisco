@@ -17,6 +17,14 @@ ServerSignature Off
   RewriteCond %{HTTPS} !=on [OR]
   RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+  # Support extensionless internal links (/despre -> /despre.html)
+  RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,8}$
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
 </IfModule>
 
 # Hide dotfiles except .well-known/*

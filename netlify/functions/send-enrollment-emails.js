@@ -50,8 +50,8 @@ const getAllowedOrigins = () => {
     .map((v) => v.trim())
     .filter(Boolean);
   const defaults = [
-    "https://academie.grupulverde.ro",
-    "https://academiacisco.netlify.app",
+    "https://youthcodeacademy.ro",
+    "https://www.youthcodeacademy.ro",
     "http://localhost:8888",
     "http://localhost:3000"
   ];
