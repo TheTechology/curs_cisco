@@ -2,7 +2,7 @@
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const DEFAULT_OWNER_EMAIL = "thetechologyhub@gmail.com";
-const DEFAULT_FROM_EMAIL = "admitere@academie.grupulverde.ro";
+const DEFAULT_FROM_EMAIL = "onboarding@resend.dev";
 const DEFAULT_FROM_NAME = "NetAcad Adjud";
 const DEFAULT_TEST_RECIPIENT = "thetechologyhub@gmail.com";
 
@@ -231,6 +231,9 @@ exports.handler = async (event) => {
   const fromEmail = process.env.ENROLLMENT_FROM_EMAIL || DEFAULT_FROM_EMAIL;
   const fromName = process.env.ENROLLMENT_FROM_NAME || DEFAULT_FROM_NAME;
   const testRecipient = (process.env.RESEND_TEST_RECIPIENT || DEFAULT_TEST_RECIPIENT).toLowerCase();
+  const normalizedFromEmail = String(fromEmail || "").trim().toLowerCase();
+  const isResendTestSender = normalizedFromEmail.endsWith("@resend.dev");
+  const effectiveOwnerEmail = isResendTestSender ? testRecipient : ownerEmail;
   const from = `${fromName} <${fromEmail}>`;
 
   if (!apiKey) {
@@ -297,14 +300,13 @@ exports.handler = async (event) => {
 
   const internal = buildInternalEmail(lead);
   const applicant = buildApplicantEmail(lead);
-  const isResendTestSender = fromEmail.toLowerCase().endsWith("@resend.dev");
   const applicantEmail = lead.email.toLowerCase();
   const shouldSendApplicantEmail = !isResendTestSender || applicantEmail === testRecipient;
 
   try {
     await sendEmail(apiKey, {
       from,
-      to: [ownerEmail],
+      to: [effectiveOwnerEmail],
       reply_to: lead.email,
       subject: internal.subject,
       html: internal.html,
@@ -330,7 +332,7 @@ exports.handler = async (event) => {
     console.error("Enrollment email dispatch failed", {
       message: String(error && error.message ? error.message : error),
       name: String(error && error.name ? error.name : ""),
-      ownerEmail,
+      ownerEmail: effectiveOwnerEmail,
       applicantEmail: lead.email
     });
     return {
