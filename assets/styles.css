@@ -5661,3 +5661,64 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Final mobile button lock (RO/EN): visibility, contrast, tap size */
+@media (max-width: 900px) {
+  .btn-row {
+    gap: 0.6rem !important;
+  }
+
+  .btn {
+    min-height: 50px !important;
+    padding: 0.72rem 1rem !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+  }
+
+  .btn.primary,
+  .nav a.nav-cta {
+    background: #005fb8 !important;
+    border: 1px solid #004a8f !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 16px rgba(0, 79, 153, 0.26) !important;
+  }
+
+  .btn.primary:hover,
+  .btn.primary:focus-visible,
+  .nav a.nav-cta:hover,
+  .nav a.nav-cta:focus-visible {
+    background: #00529f !important;
+    border-color: #003f79 !important;
+  }
+
+  .btn.ghost {
+    background: #f2f6fc !important;
+    border: 1px solid #b9cae1 !important;
+    color: #173f67 !important;
+  }
+
+  .btn.ghost:hover,
+  .btn.ghost:focus-visible {
+    background: #e7eef9 !important;
+    border-color: #9fb7d6 !important;
+    color: #113454 !important;
+  }
+
+  .home-main .home-tracks .home-tracks-grid .program-card .btn.ghost {
+    min-height: 48px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-row .btn {
+    width: 100% !important;
+  }
+
+  .home-main .home-section-head .btn.primary,
+  .home-main .home-section-head .btn.ghost {
+    width: 100% !important;
+  }
+}
