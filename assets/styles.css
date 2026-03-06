@@ -80,6 +80,34 @@ body.page-home .topbar {
   display: none;
 }
 
+/* Homepage dark unification: keep the whole index in one deep tone. */
+body.page-home {
+  background: #050f22;
+}
+
+body.page-home .home-main {
+  background: transparent;
+}
+
+body.page-home .home-main::before,
+body.page-home .home-main::after,
+body.page-home .home-main > section + section::before {
+  display: none;
+}
+
+body.page-home .hero,
+body.page-home .home-quicknav,
+body.page-home .card,
+body.page-home .program-card,
+body.page-home .impact-media-card,
+body.page-home .badge-card--marketing,
+body.page-home .catalog-visual-card,
+body.page-home .course-visual-card {
+  background: #050f22;
+  border-color: rgba(92, 122, 173, 0.26);
+  box-shadow: none;
+}
+
 .site-header {
   position: sticky;
   top: 0;
