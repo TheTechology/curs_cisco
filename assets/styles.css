@@ -4823,3 +4823,81 @@ textarea:focus {
     font-size: 0.77rem !important;
   }
 }
+
+/* Final button palette override (high priority): clean, professional, consistent */
+:root {
+  --ui-btn-primary-bg: #005fb8;
+  --ui-btn-primary-bg-hover: #004f99;
+  --ui-btn-primary-border: #004586;
+  --ui-btn-primary-shadow: 0 8px 18px rgba(0, 79, 153, 0.22);
+
+  --ui-btn-neutral-bg: #f4f7fc;
+  --ui-btn-neutral-bg-hover: #e8eef7;
+  --ui-btn-neutral-border: #c1cfdf;
+  --ui-btn-neutral-text: #1d3f66;
+}
+
+.btn,
+.nav a.nav-cta,
+.lang-switch__btn,
+.header-contact-meta__item,
+.footer-trust-btn,
+.footer-seo-nav a {
+  border-radius: 12px !important;
+}
+
+.btn.primary,
+.nav a.nav-cta {
+  background: var(--ui-btn-primary-bg) !important;
+  border: 1px solid var(--ui-btn-primary-border) !important;
+  color: #ffffff !important;
+  box-shadow: var(--ui-btn-primary-shadow) !important;
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible,
+.nav a.nav-cta:hover,
+.nav a.nav-cta:focus-visible {
+  background: var(--ui-btn-primary-bg-hover) !important;
+  border-color: #003c74 !important;
+}
+
+.btn.ghost,
+.lang-switch__btn,
+.header-contact-meta__item {
+  background: var(--ui-btn-neutral-bg) !important;
+  border: 1px solid var(--ui-btn-neutral-border) !important;
+  color: var(--ui-btn-neutral-text) !important;
+  box-shadow: none !important;
+}
+
+.btn.ghost:hover,
+.btn.ghost:focus-visible,
+.lang-switch__btn:hover,
+.lang-switch__btn:focus-visible,
+.header-contact-meta__item:hover,
+.header-contact-meta__item:focus-visible {
+  background: var(--ui-btn-neutral-bg-hover) !important;
+  border-color: #acbfd7 !important;
+}
+
+.lang-switch__btn.is-active {
+  background: var(--ui-btn-primary-bg) !important;
+  border-color: var(--ui-btn-primary-border) !important;
+  color: #fff !important;
+}
+
+.footer-trust-btn,
+.footer-seo-nav a {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(214, 227, 246, 0.65) !important;
+  color: #f4f8ff !important;
+}
+
+.footer-trust-btn:hover,
+.footer-trust-btn:focus-visible,
+.footer-seo-nav a:hover,
+.footer-seo-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(232, 240, 251, 0.86) !important;
+}
