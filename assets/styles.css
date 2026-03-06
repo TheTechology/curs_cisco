@@ -4901,3 +4901,75 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.2) !important;
   border-color: rgba(232, 240, 251, 0.86) !important;
 }
+
+/* Header/button polish pass: reduce bubble look, improve professional hierarchy */
+:root {
+  --header-neutral-bg: #ffffff;
+  --header-neutral-border: #cfd8e6;
+  --header-neutral-text: #1e4168;
+  --header-neutral-hover: #f1f5fb;
+  --header-active-bg: #eaf2fd;
+  --header-active-text: #17467a;
+  --header-cta-bg: #0a67c2;
+  --header-cta-bg-hover: #0858a6;
+  --header-cta-border: #074a8e;
+}
+
+.header-contact-meta__item,
+.lang-switch__btn {
+  border-radius: 10px !important;
+  background: var(--header-neutral-bg) !important;
+  border: 1px solid var(--header-neutral-border) !important;
+  color: var(--header-neutral-text) !important;
+  box-shadow: none !important;
+}
+
+.header-contact-meta__item:hover,
+.header-contact-meta__item:focus-visible,
+.lang-switch__btn:hover,
+.lang-switch__btn:focus-visible {
+  background: var(--header-neutral-hover) !important;
+  border-color: #b9c9de !important;
+}
+
+.lang-switch__btn.is-active {
+  color: #ffffff !important;
+  background: var(--header-cta-bg) !important;
+  border-color: var(--header-cta-border) !important;
+}
+
+.nav {
+  border-radius: 14px !important;
+  border: 1px solid #d6deea !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 18px rgba(20, 43, 78, 0.08) !important;
+}
+
+.nav a,
+.nav-dropdown summary {
+  min-height: 40px !important;
+  border-radius: 10px !important;
+  color: #1f4167 !important;
+  background: transparent !important;
+}
+
+.nav a.active,
+.nav a:hover,
+.nav-dropdown:hover summary,
+.nav-dropdown[open] summary {
+  color: var(--header-active-text) !important;
+  background: var(--header-active-bg) !important;
+}
+
+.nav a.nav-cta {
+  color: #ffffff !important;
+  background: var(--header-cta-bg) !important;
+  border: 1px solid var(--header-cta-border) !important;
+  box-shadow: 0 6px 14px rgba(10, 103, 194, 0.22) !important;
+}
+
+.nav a.nav-cta:hover,
+.nav a.nav-cta:focus-visible {
+  background: var(--header-cta-bg-hover) !important;
+  border-color: #063f78 !important;
+}
