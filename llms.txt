@@ -3,17 +3,17 @@
 This website presents educational programs delivered by NetAcad Adjud (Asociatia Grupul Verde), focused on IT training and academy pathways.
 
 ## Primary Pages
-- https://academie.grupulverde.ro/index.html (Homepage)
-- https://academie.grupulverde.ro/despre.html (Academy identity and mission)
-- https://academie.grupulverde.ro/cursuri.html (Full course catalog)
-- https://academie.grupulverde.ro/inregistrare.html (Admissions form)
-- https://academie.grupulverde.ro/contact.html (Contact and admissions support)
+- https://youthcodeacademy.ro/index.html (Homepage)
+- https://youthcodeacademy.ro/despre.html (Academy identity and mission)
+- https://youthcodeacademy.ro/cursuri.html (Full course catalog)
+- https://youthcodeacademy.ro/inregistrare.html (Admissions form)
+- https://youthcodeacademy.ro/contact.html (Contact and admissions support)
 
 ## Legal Pages
-- https://academie.grupulverde.ro/politica-confidentialitate.html
-- https://academie.grupulverde.ro/politica-cookies.html
-- https://academie.grupulverde.ro/termeni-si-conditii.html
-- https://academie.grupulverde.ro/regulament.html
+- https://youthcodeacademy.ro/politica-confidentialitate.html
+- https://youthcodeacademy.ro/politica-cookies.html
+- https://youthcodeacademy.ro/termeni-si-conditii.html
+- https://youthcodeacademy.ro/regulament.html
 
 ## Content Scope
 - Networking, Cybersecurity, Programming, IoT, Automation
