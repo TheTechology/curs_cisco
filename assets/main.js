@@ -9,7 +9,7 @@ const normalizeHtmlPageName = (pageName) => {
   return noQuery.endsWith(".html") ? noQuery : `${noQuery}.html`;
 };
 const currentPage = normalizeHtmlPageName(location.pathname.split("/").pop() || "index.html");
-const isEnglishPage = currentPage.endsWith("-en.html");
+const isEnglishPage = currentPage.endsWith("-en.html") || currentPage === "en.html";
 const admissionPage = isEnglishPage ? "inregistrare-en.html" : "inregistrare.html";
 const contactPage = isEnglishPage ? "contact-en.html" : "contact.html";
 const teamPage = isEnglishPage ? "echipa-en.html" : "echipa.html";
@@ -40,9 +40,15 @@ const i18n = {
   }
 };
 
-const getRoPath = (fileName) => normalizeHtmlPageName(fileName).replace(/-en\.html$/i, ".html");
+const getRoPath = (fileName) => {
+  const normalized = normalizeHtmlPageName(fileName);
+  if (normalized === "en.html") return "index.html";
+  return normalized.replace(/-en\.html$/i, ".html");
+};
 const getEnPath = (fileName) => {
   const normalized = normalizeHtmlPageName(fileName);
+  if (normalized === "index.html") return "en.html";
+  if (normalized === "en.html") return "en.html";
   return normalized.endsWith("-en.html") ? normalized : normalized.replace(/\.html$/i, "-en.html");
 };
 const getTargetPathForLang = (lang, fileName) => {

@@ -1,6 +1,18 @@
 [build]
   functions = "netlify/functions"
 
+[[redirects]]
+  from = "/index-en.html"
+  to = "/en.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index-en"
+  to = "/en.html"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
