@@ -1,7 +1,14 @@
 const menuBtn = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 const headerInner = document.querySelector(".header-inner");
-const currentPage = location.pathname.split("/").pop() || "index.html";
+const normalizeHtmlPageName = (pageName) => {
+  const trimmed = String(pageName || "").trim();
+  if (!trimmed || trimmed === "/") return "index.html";
+  const noQuery = trimmed.split("?")[0].split("#")[0].replace(/^\/+/, "");
+  if (!noQuery) return "index.html";
+  return noQuery.endsWith(".html") ? noQuery : `${noQuery}.html`;
+};
+const currentPage = normalizeHtmlPageName(location.pathname.split("/").pop() || "index.html");
 const isEnglishPage = currentPage.endsWith("-en.html");
 const admissionPage = isEnglishPage ? "inregistrare-en.html" : "inregistrare.html";
 const contactPage = isEnglishPage ? "contact-en.html" : "contact.html";
@@ -33,11 +40,14 @@ const i18n = {
   }
 };
 
-const getRoPath = (fileName) => fileName.replace(/-en\.html$/i, ".html");
-const getEnPath = (fileName) => fileName.endsWith("-en.html") ? fileName : fileName.replace(/\.html$/i, "-en.html");
+const getRoPath = (fileName) => normalizeHtmlPageName(fileName).replace(/-en\.html$/i, ".html");
+const getEnPath = (fileName) => {
+  const normalized = normalizeHtmlPageName(fileName);
+  return normalized.endsWith("-en.html") ? normalized : normalized.replace(/\.html$/i, "-en.html");
+};
 const getTargetPathForLang = (lang, fileName) => {
-  if (!fileName.endsWith(".html")) return fileName;
-  return lang === "en" ? getEnPath(fileName) : getRoPath(fileName);
+  const normalized = normalizeHtmlPageName(fileName);
+  return lang === "en" ? getEnPath(normalized) : getRoPath(normalized);
 };
 
 const setupLanguageSwitcher = () => {
@@ -208,8 +218,8 @@ if (footerMain && !footerMain.querySelector("[data-footer-brand-mark]")) {
 }
 
 // Attach source tracking to admission links and form hidden field.
-const pageName = location.pathname.split("/").pop() || "index.html";
-const sourceName = pageName.replace(".html", "") || "home";
+const pageName = currentPage;
+const sourceName = pageName.replace(/\.html$/i, "") || "home";
 const admitereLinks = document.querySelectorAll("a[href^='inregistrare.html'], a[href^='inregistrare-en.html']");
 admitereLinks.forEach((link) => {
   const href = link.getAttribute("href") || admissionPage;
@@ -670,7 +680,7 @@ if (isCoursePage && courseMain && !courseMain.querySelector("[data-course-visual
 }
 
 // Academy marketing strip (course-first branding).
-const currentPageFile = location.pathname.split("/").pop() || "index.html";
+const currentPageFile = currentPage;
 const shouldShowAcademyStrip = currentPageFile.startsWith("curs-") || currentPageFile === "cursuri.html" || currentPageFile === "cursuri-en.html";
 const pageMain = document.querySelector("main.container");
 
