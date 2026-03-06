@@ -6255,6 +6255,26 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
     padding-top: 1.35rem !important;
   }
 
+  .home-main .home-hero-aside {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .home-main .home-hero-card {
+    display: grid !important;
+    width: 100% !important;
+    margin-top: 0.2rem !important;
+  }
+
+  .home-main .home-hero-card > img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
   .home-main .home-hero-copy h1 {
     font-size: clamp(2.02rem, 9.2vw, 2.65rem) !important;
     max-width: 100% !important;
