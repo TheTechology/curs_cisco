@@ -55,6 +55,12 @@ const getTargetPathForLang = (lang, fileName) => {
   const normalized = normalizeHtmlPageName(fileName);
   return lang === "en" ? getEnPath(normalized) : getRoPath(normalized);
 };
+const toPublicPath = (fileName) => {
+  const normalized = normalizeHtmlPageName(fileName);
+  if (normalized === "index.html") return "/";
+  if (normalized === "en.html") return "en.html";
+  return normalized.replace(/\.html$/i, "");
+};
 
 const setupLanguageSwitcher = () => {
   if (!headerInner || headerInner.querySelector("[data-lang-switch]")) return;
@@ -91,8 +97,9 @@ const setupLanguageSwitcher = () => {
     if (lang !== "ro" && lang !== "en") return;
     applyLangState(lang);
     const target = getTargetPathForLang(lang, currentPage);
-    if (target === currentPage) return;
-    location.href = target;
+    const targetPublicPath = toPublicPath(target);
+    if (targetPublicPath === toPublicPath(currentPage)) return;
+    location.href = targetPublicPath;
   });
 };
 
