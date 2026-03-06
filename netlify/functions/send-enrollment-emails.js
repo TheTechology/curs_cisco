@@ -93,9 +93,17 @@ const jsonResponse = (statusCode, body) => ({
   body: JSON.stringify(body)
 });
 
+const buildEnrollmentSubject = (prefix, lead) => {
+  const course = lead.curs_selectat || "Curs neselectat";
+  const name = lead.nume || "Cursant";
+  const level = lead.nivel || "Nivel neselectat";
+  const domain = lead.domeniu || "Domeniu neselectat";
+  return `${prefix}: ${course} | ${name} | ${level} | ${domain}`;
+};
+
 const buildInternalEmail = (lead) => {
   const course = lead.curs_selectat || "Neselectat";
-  const subject = `[Admitere NetAcad] Înscriere nouă: ${course} - ${lead.nume || "Cursant nou"}`;
+  const subject = buildEnrollmentSubject("[Admitere NetAcad] Înscriere nouă", lead);
   const html = `
     <h2>Înscriere nouă la curs</h2>
     <p>Ai primit o cerere nouă de admitere. Mai jos ai toate datele trimise din formular:</p>
@@ -130,10 +138,16 @@ const buildInternalEmail = (lead) => {
 
 const buildApplicantEmail = (lead) => {
   const course = lead.curs_selectat || "programul selectat";
-  const subject = `Confirmare înscriere - ${course} | NetAcad Adjud`;
+  const subject = buildEnrollmentSubject("Confirmare înscriere NetAcad", lead);
   const html = `
     <p>Bună, ${escapeHtml(lead.nume || "viitor cursant")},</p>
     <p>Îți confirmăm primirea solicitării de înscriere pentru <strong>${escapeHtml(course)}</strong>.</p>
+    <p><strong>Rezumat cerere trimisă:</strong><br>
+      Nivel: ${escapeHtml(lead.nivel || "-")}<br>
+      Domeniu: ${escapeHtml(lead.domeniu || "-")}<br>
+      Email: ${escapeHtml(lead.email || "-")}<br>
+      Telefon: ${escapeHtml(lead.telefon || "-")}
+    </p>
     <p>În maximum <strong>24 de ore</strong> vei fi contactat de echipa academică pentru pașii următori.</p>
     <p>În răspunsul nostru vei primi informațiile complete despre:</p>
     <ul>
