@@ -5490,3 +5490,41 @@ textarea:focus {
 .home-main .home-positioning .journey-step {
   background: #1f4f86 !important;
 }
+
+/* Global content typography refresh (RO/EN): remove old text effects and apply a clear brand-consistent emphasis */
+main h1,
+main h2,
+main h3,
+main h4 {
+  color: #17385f !important;
+  text-shadow: none !important;
+  background-image: none !important;
+}
+
+main p,
+main li {
+  color: #3f5677 !important;
+}
+
+main strong {
+  color: #125192 !important;
+  font-weight: 800;
+  text-shadow: none !important;
+  background: linear-gradient(180deg, transparent 0 62%, rgba(18, 81, 146, 0.14) 62% 100%);
+  padding: 0 0.08em;
+  border-radius: 0.2em;
+}
+
+main em {
+  color: #1b5f9f !important;
+  font-style: normal;
+  text-shadow: none !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(27, 95, 159, 0.35);
+}
+
+main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
+  color: #0f4f95;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
