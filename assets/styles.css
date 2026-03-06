@@ -5298,6 +5298,117 @@ textarea:focus {
   box-shadow: none !important;
 }
 
+/* Homepage tracks section: higher visibility + cleaner professional look (RO/EN) */
+.home-tracks .home-section-head .kicker {
+  color: #0f4f95 !important;
+  letter-spacing: 0.06em;
+}
+
+.home-tracks .home-section-head .section-title {
+  color: #10243f !important;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.08;
+}
+
+.home-tracks .home-section-head .btn.primary {
+  min-height: 54px;
+  padding-inline: 1.55rem !important;
+  border-radius: 14px !important;
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+
+.home-tracks-grid {
+  gap: 1rem !important;
+}
+
+.home-tracks .program-card {
+  background: #ffffff !important;
+  border: 1px solid #ccdbef !important;
+  border-radius: 22px !important;
+  box-shadow: 0 14px 30px rgba(11, 37, 76, 0.1) !important;
+  padding: 1rem 1rem 0.95rem !important;
+  min-height: 520px;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  gap: 0.55rem;
+}
+
+.home-tracks .program-card:hover {
+  transform: translateY(-4px);
+  border-color: #b6ccec !important;
+  box-shadow: 0 20px 38px rgba(12, 42, 86, 0.14) !important;
+}
+
+.home-tracks .track-icon {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 14px;
+  border: 1px solid #cad9ef;
+  background: linear-gradient(180deg, #f5f9ff, #ecf3ff);
+  padding: 0.52rem;
+}
+
+.home-tracks .program-card .label {
+  margin-bottom: 0.22rem !important;
+  background: #eaf2ff !important;
+  border: 1px solid #c8d8f0 !important;
+  color: #1a4f88 !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  padding: 0.26rem 0.66rem !important;
+}
+
+.home-tracks .program-card h3 {
+  margin: 0.02rem 0 0.2rem !important;
+  color: #123d70 !important;
+  font-size: clamp(2rem, 2.8vw, 2.15rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+.home-tracks .program-card p {
+  margin: 0 !important;
+  color: #3f5677 !important;
+  font-size: 0.93rem !important;
+  line-height: 1.45;
+  max-width: 34ch;
+}
+
+.home-tracks .program-card .btn.ghost {
+  margin-top: 0.55rem;
+  min-height: 52px;
+  border-radius: 14px !important;
+  border: 1px solid #c4d3e8 !important;
+  background: #f6f9fe !important;
+  color: #1c456f !important;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.home-tracks .program-card .btn.ghost:hover,
+.home-tracks .program-card .btn.ghost:focus-visible {
+  background: #ebf2fc !important;
+  border-color: #abc1df !important;
+  color: #173d66 !important;
+}
+
+@media (max-width: 1100px) {
+  .home-tracks .home-section-head .section-title {
+    font-size: clamp(1.7rem, 6vw, 2.25rem);
+  }
+
+  .home-tracks .program-card {
+    min-height: 0;
+  }
+
+  .home-tracks .program-card h3 {
+    font-size: clamp(1.7rem, 7vw, 2rem) !important;
+  }
+}
+
 /* Desktop logo scale-up for better PC fit */
 @media (min-width: 1201px) and (max-width: 1365px) {
   .site-header .header-inner {
