@@ -5546,3 +5546,118 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
 .attention-phrase--strong::after {
   display: none !important;
 }
+
+/* Final redesign v3: home learning paths (RO/EN) */
+.home-main .home-tracks {
+  padding-top: 1.25rem !important;
+}
+
+.home-main .home-tracks .home-section-head {
+  margin-bottom: 1rem !important;
+  align-items: center !important;
+}
+
+.home-main .home-tracks .home-section-head .section-title {
+  max-width: 20ch !important;
+  font-size: clamp(2rem, 4vw, 2.75rem) !important;
+  color: #112a49 !important;
+}
+
+.home-main .home-tracks .home-section-head .btn.primary {
+  min-height: 50px !important;
+  border-radius: 12px !important;
+  padding: 0.7rem 1.2rem !important;
+  font-size: 0.96rem !important;
+}
+
+.home-main .home-tracks .home-tracks-grid {
+  gap: 0.85rem !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card {
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-rows: auto auto auto auto auto !important;
+  align-content: start !important;
+  gap: 0.5rem !important;
+  padding: 0.82rem !important;
+  border-radius: 18px !important;
+  border: 1px solid #c8d9ee !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) !important;
+  box-shadow: 0 10px 22px rgba(14, 44, 86, 0.1) !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #b2cbe9 !important;
+  box-shadow: 0 16px 30px rgba(14, 44, 86, 0.14) !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card .track-icon {
+  width: 48px !important;
+  height: 48px !important;
+  border: 1px solid #c4d6ed !important;
+  border-radius: 12px !important;
+  background: #eef5ff !important;
+  padding: 0.45rem !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card .label {
+  width: fit-content !important;
+  margin: 0 !important;
+  padding: 0.2rem 0.56rem !important;
+  border-radius: 999px !important;
+  border: 1px solid #c7d8ef !important;
+  background: #edf4ff !important;
+  color: #1a4d84 !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card h3 {
+  margin: 0 !important;
+  font-size: clamp(1.08rem, 2.2vw, 1.38rem) !important;
+  line-height: 1.2 !important;
+  color: #143b69 !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card p {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.45 !important;
+  color: #3a5274 !important;
+  max-width: none !important;
+}
+
+.home-main .home-tracks .home-tracks-grid .program-card .btn.ghost {
+  margin-top: 0.35rem !important;
+  min-height: 46px !important;
+  border-radius: 12px !important;
+  border: 1px solid #bfd2ea !important;
+  background: #f3f8ff !important;
+  color: #1b456f !important;
+  font-size: 0.96rem !important;
+  font-weight: 800 !important;
+}
+
+@media (min-width: 1280px) {
+  .home-main .home-tracks .home-tracks-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 1279px) {
+  .home-main .home-tracks .home-tracks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-main .home-tracks .home-section-head {
+    align-items: start !important;
+  }
+
+  .home-main .home-tracks .home-tracks-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
