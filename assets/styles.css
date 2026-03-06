@@ -5528,3 +5528,21 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
+
+/* Final fix: keep highlighted expressions visible on all RO/EN pages */
+.attention-phrase {
+  color: #154a83 !important;
+  font-weight: 760 !important;
+  text-shadow: none !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important;
+  animation: none !important;
+  border-bottom: 1px solid rgba(21, 74, 131, 0.28);
+}
+
+.attention-phrase--strong::after {
+  display: none !important;
+}
