@@ -5043,3 +5043,66 @@ textarea:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+/* Restore initial courses dropdown layout, improve only contrast/visibility */
+@media (min-width: 901px) {
+  .submenu {
+    position: absolute !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    top: calc(100% + 8px) !important;
+    width: min(860px, 90vw) !important;
+    max-height: 70vh !important;
+    padding: 0.8rem !important;
+    gap: 0.65rem !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    border-radius: 12px !important;
+    border: 1px solid #cdd9ee !important;
+    background: #ffffff !important;
+    box-shadow: 0 18px 36px rgba(10, 35, 74, 0.16) !important;
+    overflow: auto !important;
+  }
+
+  .submenu > a {
+    background: #f1f6ff !important;
+    border: 1px solid #c8d8f0 !important;
+    color: #123f74 !important;
+    border-radius: 10px !important;
+    font-weight: 800 !important;
+  }
+
+  .submenu-group {
+    background: #f8fbff !important;
+    border: 1px solid #d7e3f4 !important;
+    border-radius: 10px !important;
+    padding: 0.55rem !important;
+  }
+
+  .submenu-group strong {
+    color: #1f4f85 !important;
+    opacity: 1 !important;
+    font-size: 0.9rem !important;
+    font-weight: 800 !important;
+  }
+
+  .submenu-group a {
+    color: #173e68 !important;
+    opacity: 1 !important;
+    font-size: 0.84rem !important;
+    font-weight: 650 !important;
+    border-radius: 8px !important;
+  }
+
+  .submenu-group a:hover {
+    background: #e7f0ff !important;
+    color: #0f3966 !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1280px) {
+  .submenu {
+    width: min(860px, 92vw) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
