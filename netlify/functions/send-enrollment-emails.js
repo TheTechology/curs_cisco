@@ -252,14 +252,14 @@ exports.handler = async (event) => {
   const fromName = process.env.ENROLLMENT_FROM_NAME || DEFAULT_FROM_NAME;
   const testRecipient = (process.env.RESEND_TEST_RECIPIENT || DEFAULT_TEST_RECIPIENT).toLowerCase();
   const normalizedFromEmail = String(fromEmail || "").trim().toLowerCase();
-  const isResendTestSender = normalizedFromEmail.endsWith("@resend.dev");
-  const effectiveOwnerEmail = isResendTestSender ? testRecipient : ownerEmail;
   let activeFromEmail = fromEmail;
+  const getInternalRecipient = () =>
+    activeFromEmail.toLowerCase().endsWith("@resend.dev") ? testRecipient : ownerEmail;
 
   const sendInternalWithActiveSender = async () => {
     await sendEmail(apiKey, {
       from: `${fromName} <${activeFromEmail}>`,
-      to: [effectiveOwnerEmail],
+      to: [getInternalRecipient()],
       reply_to: lead.email,
       subject: internal.subject,
       html: internal.html,
@@ -367,7 +367,7 @@ exports.handler = async (event) => {
     console.error("Enrollment email dispatch failed", {
       message: String(error && error.message ? error.message : error),
       name: String(error && error.name ? error.name : ""),
-      ownerEmail: effectiveOwnerEmail,
+      ownerEmail: getInternalRecipient(),
       applicantEmail: lead.email
     });
     return {
