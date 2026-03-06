@@ -876,6 +876,110 @@ main > section + section {
   }
 }
 
+/* Homepage career journey professional redesign (RO/EN) */
+.home-positioning-panel {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  padding: 1.1rem;
+  box-shadow: 0 14px 30px rgba(12, 40, 84, 0.1);
+}
+
+.home-section-head--journey {
+  margin-bottom: 0.75rem;
+}
+
+.home-section-head--journey .section-title {
+  max-width: 30ch;
+}
+
+.home-journey-intro {
+  margin: 0 0 0.9rem;
+  max-width: 80ch;
+  color: #395377;
+  font-size: 1.02rem;
+}
+
+.home-journey-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.95rem;
+}
+
+.journey-metric {
+  border: 1px solid #d5e2f3;
+  border-radius: 14px;
+  background: #f9fcff;
+  padding: 0.72rem 0.8rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.journey-metric span {
+  color: #3f618d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.journey-metric strong {
+  color: #163a65;
+  font-size: 1.02rem;
+}
+
+.journey-metric p {
+  margin: 0;
+  color: #496489;
+  font-size: 0.92rem;
+}
+
+.home-journey-stages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.journey-stage {
+  border: 1px solid #d3e0f2;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 0.82rem;
+  box-shadow: 0 8px 18px rgba(13, 38, 77, 0.07);
+}
+
+.journey-step {
+  display: inline-flex;
+  min-width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #0f5fab;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.journey-stage h3 {
+  margin: 0 0 0.25rem;
+  color: #18385e;
+}
+
+.journey-stage p {
+  margin: 0;
+  color: #486082;
+}
+
+@media (max-width: 1100px) {
+  .home-journey-metrics,
+  .home-journey-stages {
+    grid-template-columns: 1fr;
+  }
+}
+
 .notice {
   background: #f2f7ff;
   border: 1px solid #d2e0f8;
