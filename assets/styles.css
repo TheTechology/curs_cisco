@@ -5731,11 +5731,17 @@ main a:not(.btn):not(.badge):not(.footer-trust-btn):not(.footer-seo-nav a) {
 
 @media (max-width: 900px) {
   .home-badges .badge-cta-row {
-    gap: 0.45rem !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
   }
 
   .home-badges .badge-cta-row .btn {
     width: 100% !important;
     min-width: 0;
+    min-height: 52px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
   }
 }
