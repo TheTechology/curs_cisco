@@ -103,23 +103,62 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2 class="section-title">De ce să aplici acum</h2>
-      <div class="grid-3">
-        <article class="card"><h3>Evaluare corectă de nivel</h3><p>Îți recomandăm traseul potrivit, fără module nepotrivite.</p></article>
-        <article class="card"><h3>Plan academic personalizat</h3><p>Primești structură clară: program, ritm și criterii de progres.</p></article>
-        <article class="card"><h3>Orientare spre rezultate</h3><p>Competențe aplicabile, portofoliu și pași de carieră.</p></article>
+  <main class="container registration-main-v2">
+    <section class="registration-hero-v2 card">
+      <div class="registration-hero-v2-grid">
+        <div class="registration-hero-v2-copy">
+          <div class="kicker">ADMITERE NETACAD ADJUD</div>
+          <h1 class="section-title">Aplică acum la cursul potrivit nivelului tău</h1>
+          <p>
+            Completezi formularul o singură dată, iar noi îți trimitem recomandarea academică pentru nivel, traseu și pașii următori.
+            În maxim 24 de ore primești răspuns de la echipă.
+          </p>
+          <div class="registration-hero-v2-tags">
+            <span>Răspuns în 24h</span>
+            <span>Evaluare nivel</span>
+            <span>Traseu personalizat</span>
+          </div>
+        </div>
+        <aside class="registration-hero-v2-panel">
+          <h3>Ce primești după înscriere</h3>
+          <ul>
+            <li>Confirmare rapidă pe email</li>
+            <li>Recomandare clară Foundation / Associate / Professional</li>
+            <li>Pașii concreți pentru începerea cursului</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn ghost" href="cursuri.html">Vezi programele</a>
+            <a class="btn ghost" href="contact.html">Contact direct</a>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section>
-      <h1 class="section-title">Formular de înregistrare</h1>
-      <div class="registration-brand-mark">
-        <img src="Imagini/Logo_academie_CISCO.png" alt="Logo Youth Code Academy" width="910" height="229" loading="lazy" decoding="async">
-      </div>
-      <div class="notice">Formular corelat cu traseele academice din pagina Cursuri. Datele sunt folosite exclusiv pentru procesul de admitere.</div>
-      <form class="card form-grid" name="admitere-netacad" method="POST" action="multumim.html" data-netlify="true" netlify-honeypot="company">
+    <section class="registration-layout-v2">
+      <div class="registration-layout-v2-grid">
+        <aside class="registration-benefits-v2 card">
+          <h2 class="section-title">Proces de admitere simplu</h2>
+          <article>
+            <strong>1. Completezi formularul</strong>
+            <p>Datele tale sunt folosite exclusiv pentru admitere și recomandarea academică.</p>
+          </article>
+          <article>
+            <strong>2. Primești evaluarea</strong>
+            <p>Stabilim nivelul potrivit și cursul recomandat în funcție de obiectivul tău.</p>
+          </article>
+          <article>
+            <strong>3. Confirmi locul</strong>
+            <p>Primești detalii privind calendarul, formatul de lucru și costurile.</p>
+          </article>
+        </aside>
+
+        <div class="registration-form-shell card">
+          <h2 class="section-title">Formular de înregistrare</h2>
+          <div class="registration-brand-mark">
+            <img src="Imagini/Logo_academie_CISCO.png" alt="Logo Youth Code Academy" width="910" height="229" loading="lazy" decoding="async">
+          </div>
+          <div class="notice registration-notice-v2">Formular corelat cu traseele academice din pagina Cursuri. Datele sunt folosite exclusiv pentru procesul de admitere.</div>
+          <form class="form-grid registration-form-v2" name="admitere-netacad" method="POST" action="multumim.html" data-netlify="true" netlify-honeypot="company">
         <input type="hidden" name="form-name" value="admitere-netacad">
         <input type="hidden" name="lead_source" id="lead_source" value="direct">
         <input type="hidden" name="curs_selectat" id="curs_selectat" value="">
@@ -177,7 +216,9 @@
         <div class="full">
           <button type="submit" class="btn primary">Trimite solicitarea</button>
         </div>
-      </form>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
 
