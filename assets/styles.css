@@ -75,6 +75,11 @@ img[width][height] {
   flex-wrap: wrap;
 }
 
+/* Homepage cleanup: remove the extra top strip that can look like an empty band. */
+body.page-home .topbar {
+  display: none;
+}
+
 .site-header {
   position: sticky;
   top: 0;
