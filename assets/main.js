@@ -877,6 +877,7 @@ if (enrollmentForm && !enrollmentForm.dataset.emailHookBound) {
     event.preventDefault();
 
     const form = event.currentTarget;
+    const thankYouTarget = form.getAttribute("action") || (isEnglishPage ? "multumim-en.html" : "multumim.html");
     const formData = new FormData(form);
     const payload = {
       nume: (formData.get("nume") || "").toString().trim(),
@@ -908,7 +909,7 @@ if (enrollmentForm && !enrollmentForm.dataset.emailHookBound) {
       // Form submission must continue even if notification email fails.
     } finally {
       window.clearTimeout(timeoutId);
-      form.submit();
+      location.href = thankYouTarget;
     }
   });
 }

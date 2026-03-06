@@ -47,7 +47,12 @@ const getAllowedOrigins = () => {
     .split(",")
     .map((v) => v.trim())
     .filter(Boolean);
-  const defaults = ["https://academie.grupulverde.ro", "http://localhost:8888", "http://localhost:3000"];
+  const defaults = [
+    "https://academie.grupulverde.ro",
+    "https://academiacisco.netlify.app",
+    "http://localhost:8888",
+    "http://localhost:3000"
+  ];
   return new Set([...defaults, ...configured]);
 };
 
@@ -202,6 +207,13 @@ exports.handler = async (event) => {
   const allowedOrigins = getAllowedOrigins();
   const origin = getHeader(event.headers, "origin");
   const referer = getHeader(event.headers, "referer");
+  const forwardedHost = getHeader(event.headers, "x-forwarded-host");
+  const host = getHeader(event.headers, "host");
+  const requestHost = forwardedHost || host;
+  if (requestHost) {
+    allowedOrigins.add(`https://${requestHost}`);
+    allowedOrigins.add(`http://${requestHost}`);
+  }
   const secFetchSite = getHeader(event.headers, "sec-fetch-site").toLowerCase();
   if (secFetchSite && secFetchSite !== "same-origin" && secFetchSite !== "same-site") {
     return jsonResponse(403, { error: "Forbidden request context" });
